@@ -12,6 +12,8 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+client = TestClient(app)
+
 origins = ["*"]
 
 app.add_middleware(
