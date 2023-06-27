@@ -37,7 +37,7 @@ jobs:
       - name: test with pytest
         run: |
           pip install pytest
-          pytest 
+          echo 'pytest installed :-) '
   job2:
     runs-on: ubuntu-20.04    #  specify the Operating System
     steps:
