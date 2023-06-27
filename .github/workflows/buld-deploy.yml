@@ -39,6 +39,7 @@ jobs:
           pip install pytest
           echo 'pytest installed :-) '
   job2:
+    needs: job1
     runs-on: ubuntu-20.04    #  specify the Operating System
     steps:
       - name: Pulling git  repo 
@@ -46,6 +47,7 @@ jobs:
       - name: say hi to Wiesbaden
         run: echo "Hello Wiesbaden !"
   job3:
+    needs: job2
     runs-on: ubuntu-latest
     strategy:
       matrix:
