@@ -1,7 +1,11 @@
 name: Build and Deploy Code
 
 on:
-  push: [push, pull_request]
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs: 
   job1: 
