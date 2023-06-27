@@ -88,15 +88,7 @@ jobs:
   job3:
     needs: job2
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        go-version: [ '1.14', '1.15', '1.16.x' ]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Go ${{ matrix.go-version }}
-        uses: actions/setup-go@v4
-        with:
-          go-version: ${{ matrix.go-version }}
-      # You can test your matrix by printing the current Go version
-      - name: Display Go version
-        run: go version
+    
+    steps: 
+    - name: deploying stuff
+      run: echo "going to deploy some nice stuff"
