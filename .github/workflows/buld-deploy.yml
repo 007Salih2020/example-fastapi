@@ -89,8 +89,7 @@ jobs:
     - name: deploying stuff
       run: echo "going to deploy some nice stuff"
     - name: deploying Heroku
-    - uses: actions/checkout@v2
-    - uses: akhileshns/heroku-deploy@v3.12.14   # This is the action
+      uses: akhileshns/heroku-deploy@v3.12.14   # This is the action
       # with:
       #   heroku_email: ${{secrets.HEROKU_EMAIL}}
       #   heroku_api_key: ${{secrets.HEROKU_API_KEY}}
