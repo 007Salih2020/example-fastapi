@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs: 
-  job1: 
+  build: 
     environment:
       name: testing 
     env:
@@ -77,16 +77,9 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-  job2:
-    needs: job1
-    runs-on: ubuntu-20.04    #  specify the Operating System
-    steps:
-      - name: Pulling git  repo 
-        uses: actions/checkout@v2 
-      - name: say hi to Wiesbaden
-        run: echo "Hello Wiesbaden !"
-  job3:
-    needs: job2
+   
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     
     steps: 
